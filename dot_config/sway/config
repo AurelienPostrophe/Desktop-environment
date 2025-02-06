@@ -6,10 +6,24 @@
 # Read `man 5 sway` for a complete reference.
 #########################################################################
 # Input
+# man 5 sway-input
 ## Keyboard
 input "type:keyboard" {
         xkb_layout fr
 }
+
+# Outputs
+# man 5 sway-output
+## Display
+
+output eDP-1 {
+	mode 2880x1800@120Hz
+}
+
+## Brightness
+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 ### Variables
 #
