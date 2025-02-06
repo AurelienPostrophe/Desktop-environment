@@ -1,2 +1,31 @@
 {
+    // Terminal
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.fontSize": 11,
+    // Editor
+    
+    //// Font
+    "editor.fontSize": 12,
+    "editor.renderWhitespace": "trailing",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.codeLensFontSize": 8,
+
+    //// Suggestions
+    "editor.snippetSuggestions": "top",
+    "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.autoClosingQuotes": "always",
+
+    //// Minimap
+    "editor.minimap.renderCharacters": false,
+
+    // Widgets
+
+    //// Search
+    "search.maxResults": 4000
 }
