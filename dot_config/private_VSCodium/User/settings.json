@@ -3,7 +3,7 @@
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.fontSize": 11,
     // Editor
-    
+
     //// Font
     "editor.fontSize": 12,
     "editor.renderWhitespace": "trailing",
@@ -17,10 +17,14 @@
         "comments": "off",
         "strings": "off"
     },
+
+    //// Auto-type
     "editor.autoClosingBrackets": "always",
     "editor.autoClosingDelete": "always",
     "editor.autoClosingQuotes": "always",
-
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
     //// Minimap
     "editor.minimap.renderCharacters": false,
 
