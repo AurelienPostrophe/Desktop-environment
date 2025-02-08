@@ -1,5 +1,7 @@
 {
     // Terminal
+    "terminal.explorerKind": "external",
+    "terminal.external.linuxExec": "foot",
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.fontSize": 11,
     // Editor
