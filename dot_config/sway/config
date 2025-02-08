@@ -210,17 +210,24 @@ bindsym $mod+r mode "resize"
 
 include bar
 
+bar {
+    id waybar
+
+    swaybar_command waybar
+}
+
 ####################################################################################################
 # Services
 ####################################################################################################
 
+# Core services
+
+## For xdg-desktop-portal to start, we have to import some env-var to systemd user session
+## To print systemd user session env-var: systemctl --user show-environment
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
 exec hash dbus-update-activation-environment 2>/dev/null &&\
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-
-# Read `man 5 waybar for more information about this section.
-
 
 ####################################################################################################
 # Exemples

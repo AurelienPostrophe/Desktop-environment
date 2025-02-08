@@ -4,7 +4,7 @@ bar {
 
     # Commande executée. swaybar par défaut
     # swaybar_command
-    position bottom
+    position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -17,12 +17,11 @@ bar {
     }
 }
 
-bar {
-    id test
+# bar {
+#     id test
 
-    position top
-    mode hide
-
-}
+#     position top
+#     mode hide
+# }
 
 # bindsym $mod+b swaybar id test show
