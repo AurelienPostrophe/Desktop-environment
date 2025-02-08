@@ -1,0 +1,12 @@
+{
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.*",
+                "notMatch": "\\.vscode/.*$",
+                "cmd": "chezmoi apply"
+            },
+        ],
+    }
+}
