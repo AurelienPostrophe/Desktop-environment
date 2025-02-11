@@ -1,5 +1,6 @@
 {
     // Terminal
+    "terminal.integrated.fontFamily": "JetBrains Mono, FontAwesome",
     "terminal.explorerKind": "external",
     "terminal.external.linuxExec": "foot",
     "terminal.integrated.defaultProfile.linux": "bash",
@@ -7,7 +8,10 @@
     // Editor
 
     //// Font
+    "editor.fontFamily": "JetBrains Mono, FontAwesome",
+    "editor.fontLigatures": true,
     "editor.fontSize": 12,
+    "editor.fontWeight": "500",
     "editor.renderWhitespace": "trailing",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.codeLensFontSize": 8,
