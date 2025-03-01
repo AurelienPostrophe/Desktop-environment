@@ -11,8 +11,6 @@
     // Choose the order of the modules
 //     "modules-left": [
 //
-// // waybar-cava (5)      - cava module
-// // waybar-clock (5)     - clock module
 // // waybar-cpu (5)       - cpu module
 // // waybar-custom (5)    - custom module
 // // waybar-disk (5)      - disk module
@@ -48,15 +46,23 @@
 //     ],
     "modules-center": ["sway/workspaces"],
     "modules-right": [
+        // MODULES REGISTERED
         // waybar-backlight
         "backlight",
-        // waybar-backlight-slider (5) - backlight slider module
-        // "backlight/slider",
+
         // waybar-battery (5)   - battery module
         "battery",
         // waybar-bluetooth (5) - bluetooth module
         "bluetooth",
-        /// MODULES
+        // waybar-cava (5)      - cava module
+        //"cava",
+        // waybar-clock (5)     - clock module
+        "clock",
+        /// MODULES_NOT_REGISTERED
+        // waybar-backlight-slider (5) - backlight slider module
+        // "backlight/slider",
+
+
         //"mpd",
         //"idle_inhibitor",
         //"pulseaudio",
@@ -67,7 +73,6 @@
         //"keyboard-state",
         //"sway/language",
         "tray",
-        "clock"
     ],
     "backlight": {
         // "device": "acpi_video1",
@@ -101,12 +106,36 @@
         "format-icons": ["", "", "", "", ""]
     },
     "bluetooth": {
-        "format": " {status}",
+        "tooltip-format-enumerate-connected": "",
+        // Controller powered on
+        "format-on": "",
+        "tooltip-format-on": "",
+        // Controller connected to at least 1 device
+        "format-connected": " {device_alias} {device_battery_percentage} ⚡",
+        "tooltip-format-connected": "",
+        // Controller disabled
         "format-disabled": "",
-        "format-off": ""
+        "tooltip-format-disabled": "",
+        // Controller off
+        "format-off": "",
+        "tooltip-format-off": "",
+        // fallback format
+        "format": " {status}",
+        "tooltip-format": "{device_enumerate}",
+        // left click -> show pairable device
+        "on-click": "",
+        // right click -> kill controller
+        "on-right-click": "",
+        // device battery
+        "format-connected-battery": "{device_battery_percentage} ⚡"
     },
+    // "cava": {
+    //     "framerate": 30
+    // },
     "clock": {
-        // "timezone": "America/New_York",
+        "interval": 60,
+        //"format": "",
+        "timezone": "Europe/Paris",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
