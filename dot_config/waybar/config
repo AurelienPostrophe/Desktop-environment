@@ -58,12 +58,13 @@
         //"cava",
         // waybar-clock (5)     - clock module
         "clock",
+        // "mpd",
+
         /// MODULES_NOT_REGISTERED
         // waybar-backlight-slider (5) - backlight slider module
         // "backlight/slider",
 
 
-        //"mpd",
         //"idle_inhibitor",
         //"pulseaudio",
         //"network",
