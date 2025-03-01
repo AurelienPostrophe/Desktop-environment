@@ -1,3 +1,8 @@
+/*
+** TODO: utiliser un mélange de style :
+** -> Le "arrow style" https://github.com/mxkrsv/dotfiles-old/blob/master/.config/waybar/style.css
+** -> le côté "candy" https://github.com/theCode-Breaker/riverwm/blob/main/waybar/river/river_style.css
+*/
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Fira Code, MesloLGM Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;

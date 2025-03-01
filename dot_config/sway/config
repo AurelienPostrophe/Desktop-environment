@@ -214,11 +214,10 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 # Barre
 ####################################################################################################
 
-include bar
+# include bar
 
 bar {
     id waybar
-
     swaybar_command waybar
 }
 
