@@ -2,101 +2,65 @@
     // Laptop TOP Waybar
     {
         // Main configuration
-        "name": "laptop-top",
-        "id": "laptop-top",
+        "name": "top-bar",
+        "id": "top-bar",
+        "layer": "top",
         "output": "eDP-1",
         "position": "top",
+        //"margin": "5px 5px 5px 5px", // top right bottom left
         "mode": "dock",
-        // Modules left
-        "modules-left": [
-            "group/media"
-        ],
-        "group/media": {
-            "orientation": "horizontal",
-            "modules": [
-                "wireplumber",
-                "mpris",
-                "cava"
-            ]
-        },
-        "mpris": {
-            "player": "playerctld",
-            // ignored-players: []
-            "interval": "3",
-            "format": "{player_icon} {artist} - {title}",
-            "player-icons": {
-                "spotify": ""
-            }
-        },
-        // Module center
+        "exclusive": false,
+        // Modules
         "modules-center": [
-            "sway/workspaces"
+            "memory",
+            "cpu",
+            "disk",
+            "custom/logo",
+            "temperature",
+            "network",
+            "battery"
         ],
-        // Module right
-        "modules-right": [
-            "sway/window"
-        ]
-    },
-    // Bottom Waybar == Laptop TOP Waybar
-    // Laptop BOTTOM Waybar
-    {
-        // Waybar configuration
-        // Waybar layout configuration
-        // Waybar TOP
-        // Waybar CENTER
-        "name": "default-bottom",
-        "id": "default-bottom",
-        "layer": "top", // Waybar at top layer
-        // "output": "*", // Screen to output waybar
-        "position": "bottom", // Waybar position (top|bottom|left|right)
-        "height": 30, // Waybar height (to be removed for auto height)
-        // "width": 1280, // Waybar width
-        "spacing": 4, // Gaps between modules (4px)
-        "mode": "dock",
-        "modules-left": [
-            "tray"
-        ],
-        "modules-center": [
-            "group/system"
-        ],
-        "modules-right": [
-            "bluetooth",
-            "backlight",
-            "clock",
-            "sway/mode"
-            // "MON/SCRIPT",
-            // "gamemode",
-            // "image",
-            // "sway/scratchpad",
-            // "wlr/taskbar"
-        ],
-        "group/system": {
-            "orientation": "horizontal",
-            "modules": [
-                "memory",
-                "cpu",
-                "disk",
-                "temperature",
-                "network"
-            ]
+        "memory": {
+            "format": "{}% "
         },
-        "backlight": {
-            // "device": "acpi_video1",
-            "format": "{percent}% {icon}",
+        "custom/logo": {
+            "format": "",
+            "tooltip": false
+        },
+        "temperature": {
+            // "thermal-zone": 2,
+            // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+            "critical-threshold": 80,
+            // "format-critical": "{temperatureC}°C {icon}",
+            "format": "{temperatureC}°C {icon}",
             "format-icons": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "",
+                "",
+                ""
             ]
         },
-        // "backlight/slider": {
-        // },
+        "network": {
+            // "interface": "wlp2*", // (Optional) To force the use of this interface
+            "format-wifi": "{essid} ({signalStrength}%) ",
+            "format-ethernet": "{ipaddr}/{cidr} ",
+            "tooltip-format": "{ifname} via {gwaddr} ",
+            "format-linked": "{ifname} (No IP) ",
+            "format-disconnected": "Disconnected ⚠",
+            "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        },
+        "cpu": {
+            "interval": "10",
+            "format": "{usage}% ",
+            "tooltip": false
+        },
+        "disk": {
+            "interval": "60",
+            "unit": "GiB",
+            "format": "{percentage_used}%",
+            "path": "/",
+            "tooltip": true,
+            "tooltip-format": "{free} libre"
+        },
         "battery": {
             "bat": "BAT0",
             // "full-at": 80,
@@ -127,32 +91,194 @@
                 ""
             ]
         },
-        "clock": {
-            "interval": 60,
-            //"format": "",
-            "timezone": "Europe/Paris",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-            "format-alt": "{:%Y-%m-%d}"
-        },
-        "cpu": {
-            "interval": "10",
-            "format": "{usage}% ",
-            "tooltip": false
-        },
-        "disk": {
-            "interval": "60",
-            "unit": "GiB",
-            "format": "{percentage_used}%",
-            "path": "/",
+        // Top-right : media
+        "modules-right": [
+            // "cava", // Cava module not build
+            "mpris"
+        ],
+        "mpris": {
+            "player": "playerctld",
+            // ignored-players: []
+            // "interval": "3",
+            "format": "{player_icon} {artist} - {title}",
+            "player-icons": {
+                "spotify": ""
+            },
             "tooltip": true,
-            "tooltip-format": "{free} libre"
+            "truncate-hours": true,
+            "tooltip-format": "Artist: {artist}\nAlbum: {album}\n{position}/{length}"
+        }
+    },
+    // Bottom Waybar == Laptop TOP Waybar
+    // Laptop BOTTOM Waybar
+    {
+        // Main configuration
+        "name": "bottom-bar",
+        "id": "bottom-bar",
+        "layer": "top",
+        "position": "bottom",
+        //"margin": "5px 5px 5px 5px", // top right bottom left
+        "mode": "dock",
+        // Left
+        "modules-left": [
+            "sway/workspaces",
+            "sway/window"
+        ],
+        "sway/workspaces": {
+            "all-outputs": true,
+            "disable-scroll": true,
+            "disable-click": true,
+            "disable-markup": true,
+            "format": "{value}"
         },
-        //
+        "sway/window": {
+            "format": "{app_id}",
+            "max-length": 50,
+            "on-click": "",
+            "tooltip": false,
+            "all-outputs": true,
+            "offscreen-css": true,
+            "offscreen-css-text": "toto",
+            "show-focused-workspace-name": true,
+            "icon": true,
+            "icon-size": 20
+        },
+        "modules-center": [
+            "tray"
+            // "gamemode"
+        ],
         "tray": {
-            "icon-size": 21,
+            "icon-size": 20,
             "show-passive-items": true,
             "spacing": 10
         },
+        // Bottom right bar : basic
+        "modules-right": [
+            "sway/mode",
+            "bluetooth",
+            "group/son",
+            // TODO retirer quand on aura un GTK listener
+            "backlight",
+            "clock#week",
+            "clock#date",
+            "clock#time"
+            // "MON/SCRIPT",
+            // "image",
+            // "sway/scratchpad",
+            // "wlr/taskbar"
+        ],
+        "group/son": {
+            "orientation": "horizontal",
+            "modules": [
+                "pulseaudio/slider",
+                "pulseaudio#sink",
+                "pulseaudio#source"
+            ]
+        },
+        "pulseaudio/slider": {
+            "min": 0,
+            "max": 100,
+            "orientation": "horizontal"
+        },
+        "pulseaudio#sink": {
+            "format": "{icon}",
+            "format-muted": "",
+            "format-bluetooth": "{icon}",
+            "format-icons": {
+                "speaker": [
+                    " ",
+                    " ",
+                    " "
+                ],
+                "headphone": [
+                    " ",
+                    " ",
+                    " "
+                ],
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            // Disable mouse actions
+            "scroll-step": 0.0,
+            "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+            "on-click-middle": "",
+            "on-click-right": ""
+        },
+        "pulseaudio#source": {
+            "format": "{format_source}",
+            "format-source": "",
+            "format-source-muted": "",
+            "scroll-step": 0.0,
+            "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+            "on-click-middle": "",
+            "on-click-right": ""
+        },
+        "backlight": {
+            // "device": "acpi_video1",
+            "format": "{percent}% {icon}",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        // "backlight/slider": {
+        // },
+        "clock#week": {
+            "interval": 500000,
+            // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
+            "format": "{:Week %W}",
+            "timezone": "Europe/Paris",
+            "locale": "fr_FR.utf8",
+            "on-click": "",
+            "on-scroll-up": "",
+            "on-scroll-down": "",
+            "tooltip": false
+        },
+        "clock#date": {
+            "interval": 38200,
+            // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
+            "format": "{:%A %d %B}",
+            "timezone": "Europe/Paris",
+            "locale": "fr_FR.utf8",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "on-click": "",
+            "on-scroll-up": "",
+            "on-scroll-down": "",
+            "tooltip": true,
+            "calendar": {
+                "mode": "month",
+                "weeks-pos": "left",
+                // "format": {
+                //     "months": "<span color='#ffead3'><b>{}</b></span>",
+                //     "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                //     "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                //     "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                //     "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+                // }
+            }
+        },
+        "clock#time": {
+            "interval": 5,
+            // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
+            "format": "{:%H:%M:%S}",
+            "timezone": "Europe/Paris",
+            "locale": "fr_FR.utf8",
+            "on-click": "",
+            "on-scroll-up": "",
+            "on-scroll-down": "",
+            "tooltip": false
+        },
+        //
         // Modules configuration
         // "sway/workspaces": {
         //     "disable-scroll": true,
@@ -199,53 +325,6 @@
                 "deactivated": ""
             }
         },
-        "memory": {
-            "format": "{}% "
-        },
-        "temperature": {
-            // "thermal-zone": 2,
-            // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-            "critical-threshold": 80,
-            // "format-critical": "{temperatureC}°C {icon}",
-            "format": "{temperatureC}°C {icon}",
-            "format-icons": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "network": {
-            // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "{essid} ({signalStrength}%) ",
-            "format-ethernet": "{ipaddr}/{cidr} ",
-            "tooltip-format": "{ifname} via {gwaddr} ",
-            "format-linked": "{ifname} (No IP) ",
-            "format-disconnected": "Disconnected ⚠",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}"
-        },
-        "pulseaudio": {
-            // "scroll-step": 1, // %, can be a float
-            "format": "{volume}% {icon} {format_source}",
-            "format-bluetooth": "{volume}% {icon} {format_source}",
-            "format-bluetooth-muted": " {icon} {format_source}",
-            "format-muted": " {format_source}",
-            "format-source": "{volume}% ",
-            "format-source-muted": "",
-            "format-icons": {
-                "headphone": "",
-                "hands-free": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": [
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            "on-click": "pavucontrol"
-        },
         "custom/media": {
             "format": "{icon} {}",
             "return-type": "json",
@@ -257,9 +336,6 @@
             "escape": true,
             "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
             // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-        },
-        "wireplumber": {
-            "format": "wireplumber"
         },
         "bluetooth": {
             "tooltip-format-enumerate-connected": "",

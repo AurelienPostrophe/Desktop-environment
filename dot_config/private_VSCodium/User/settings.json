@@ -1,6 +1,6 @@
 {
     // Terminal
-    "terminal.integrated.fontFamily": "JetBrains Mono, FontAwesome",
+    "terminal.integrated.fontFamily": "JetBrains Mono, MesloLGS Nerd Font Mono, FontAwesome",
     "terminal.explorerKind": "external",
     "terminal.external.linuxExec": "foot",
     "terminal.integrated.defaultProfile.linux": "bash",
@@ -8,7 +8,7 @@
     // Editor
 
     //// Font
-    "editor.fontFamily": "JetBrains Mono, FontAwesome",
+    "editor.fontFamily": "JetBrains Mono, MesloLGS Nerd Font Mono, FontAwesome",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
     "editor.fontWeight": "500",
