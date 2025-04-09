@@ -1,0 +1,20 @@
+/*******************************************************************************
+* WAYBAR
+* Modules center configuration
+*******************************************************************************/
+.modules-center * {
+    background-image: radial-gradient(circle at right, green 50%, red 50%);
+}
+
+/*
+** Modules-center-right
+*/
+.modules-center :nth-child(n+3):nth-last-child(-n+3) * {
+    padding-left: 5pt;
+    padding-right: 5pt;
+    background-position: left;
+    background-image: radial-gradient(circle at left, transparent 50%, yellow);
+    background-repeat: no-repeat;
+    background-size: 10pt;
+    background-color: yellow;
+}

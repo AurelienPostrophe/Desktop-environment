@@ -11,11 +11,10 @@
         "mode": "dock",
         "exclusive": false,
         // Modules
-        "modules-center": [
+        "modules-left": [
             "memory",
             "cpu",
             "disk",
-            "custom/logo",
             "temperature",
             "network",
             "battery"
@@ -91,6 +90,9 @@
                 ""
             ]
         },
+        "modules-center": [
+            "custom/logo"
+        ],
         // Top-right : media
         "modules-right": [
             // "cava", // Cava module not build
@@ -122,7 +124,8 @@
         // Left
         "modules-left": [
             "sway/workspaces",
-            "sway/window"
+            "sway/window",
+            "sway/mode"
         ],
         "sway/workspaces": {
             "all-outputs": true,
@@ -154,12 +157,11 @@
         },
         // Bottom right bar : basic
         "modules-right": [
-            "sway/mode",
             "bluetooth",
             "group/son",
             // TODO retirer quand on aura un GTK listener
             "backlight",
-            "clock#week",
+            // "clock#week",
             "clock#date",
             "clock#time"
             // "MON/SCRIPT",
@@ -170,7 +172,6 @@
         "group/son": {
             "orientation": "horizontal",
             "modules": [
-                "pulseaudio/slider",
                 "pulseaudio#sink",
                 "pulseaudio#source"
             ]
