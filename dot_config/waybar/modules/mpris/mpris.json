@@ -1,0 +1,12 @@
+{
+    "mpris": {
+        "player": "playerctld",
+        "format": "{player_icon} {artist} - {title}",
+        "player-icons": {
+            "spotify": ""
+        },
+        "tooltip": true,
+        "truncate-hours": true,
+        "tooltip-format": "Artist: {artist}\nAlbum: {album}\n{position}/{length}"
+    }
+}

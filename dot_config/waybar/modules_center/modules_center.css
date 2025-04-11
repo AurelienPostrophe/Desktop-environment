@@ -1,0 +1,93 @@
+/*******************************************************************************
+* WAYBAR
+* Modules center configuration
+*******************************************************************************/
+
+.modules-center > widget {
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+}
+
+.modules-center > widget > * {
+    padding-right: 10pt;
+    padding-left: 10pt;
+}
+
+/*******************************************************************************
+* Colors
+*******************************************************************************/
+
+/* 1 elements */
+.modules-center > widget:first-child:nth-last-child(1) {
+    background-color: @rosewater;
+}
+
+/* 2 elements */
+.modules-center > widget:first-child:nth-last-child(2) {
+    background-color: @mauve;
+}
+.modules-center > widget:last-child:nth-child(2) {
+    background-color: @sky;
+}
+
+/* 3 elements */
+.modules-center > widget:first-child:nth-last-child(3) {
+    background-color: @rosewater;
+}
+.modules-center > widget:nth-child(2):nth-last-child(2) {
+    background-color: @sky;
+}
+.modules-center > widget:last-child:nth-child(3) {
+    background-color: @sky;
+}
+
+/* 4 elements */
+.modules-center > widget:first-child:nth-last-child(4) {
+    background-color: @rosewater;
+}
+
+.modules-center widget:last-child:nth-child(4) {
+    background-color: red;
+    background: red;
+
+}
+
+/* To the left */
+.modules-center > widget:nth-child(-n+4):nth-last-child(n+4) {
+    padding-right: 15pt;
+    padding-left: 15pt;
+}
+/* To the right */
+
+/* 5 elements */
+.modules-center > widget:first-child:nth-last-child(5) {
+    background-color: @rosewater;
+}
+
+/* 6 elements */
+.modules-center > widget:first-child:nth-last-child(6) {
+    background-color: @rosewater;
+}
+
+/* 7 elements */
+.modules-center > widget:first-child:nth-last-child(7) {
+    background-color: @rosewater;
+}
+
+
+/* Odd number of elements */
+
+/*
+** Modules-center-right
+*/
+/* .modules-center :nth-child(n+3):nth-last-child(-n+3) * {
+    padding-left: 5pt;
+    padding-right: 5pt;
+    background-position: left;
+    background-image: radial-gradient(circle at left, transparent 50%, yellow);
+    background-repeat: no-repeat;
+    background-size: 10pt;
+    background-color: yellow;
+} */

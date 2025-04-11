@@ -1,0 +1,6 @@
+{
+    "modules-right": [
+        // "cava", // Cava module not build
+        "mpris"
+    ]
+}

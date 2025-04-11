@@ -1,0 +1,62 @@
+/*******************************************************************************
+* WAYBAR
+* Modules right configuration
+*******************************************************************************/
+
+.modules-right widget {
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+}
+
+.modules-right widget > * {
+    padding-right: 15pt;
+    padding-left: 15pt;
+}
+
+.modules-right widget:not(:last-child) > * {
+    padding-right: 15pt;
+    padding-left: 10pt;
+}
+
+
+/*******************************************************************************
+* Colors
+*******************************************************************************/
+
+.modules-right widget:last-child {
+    background-color: @flamingo;
+    background: radial-gradient(8pt 8pt at right, transparent 100%, @flamingo);
+}
+
+.modules-right widget:nth-last-child(2) {
+    background-color: @mauve;
+    background: radial-gradient(8pt 8pt at right, transparent 100%, @mauve);
+}
+
+.modules-right widget:nth-last-child(3) {
+    background-color: @maroon;
+    background: radial-gradient(8pt 8pt at right, transparent 100%, @maroon);
+}
+
+.modules-right widget:nth-last-child(4) {
+    background-color: @yellow;
+    background: radial-gradient(8pt 8pt at right, transparent 100%, @yellow);
+}
+
+.modules-right widget:nth-last-child(5) {
+    background-color: @teal;
+    background: radial-gradient(8pt 8pt at right, transparent 100%, @teal);
+}
+
+.modules-right widget:nth-last-child(6) {
+    background-color: @sapphire;
+    background: radial-gradient(8pt 8pt at right, transparent 100%, @sapphire);
+}
+
+.modules-right widget:nth-last-child(7) {
+    background-color: @lavender;
+}
+
+/* .modules-right > widget:last-child {
+
+} */

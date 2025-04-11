@@ -1,0 +1,10 @@
+{
+    "modules-left": [
+        "memory",
+        "cpu",
+        "disk",
+        "temperature",
+        "network",
+        "battery"
+    ]
+}

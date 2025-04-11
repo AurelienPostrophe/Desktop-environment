@@ -1,0 +1,57 @@
+/*******************************************************************************
+* WAYBAR
+* Modules left configuration
+*******************************************************************************/
+
+.modules-left > widget {
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.modules-left > widget > * {
+    padding-right: 10pt;
+    padding-left: 5pt;
+}
+
+.modules-left > widget:not(:first-child) > * {
+    padding-right: 10pt;
+    padding-left: 15pt;
+}
+
+/*******************************************************************************
+* Color every modules (up to 7)
+*******************************************************************************/
+
+.modules-left > widget:first-child {
+    background-color: @rosewater;
+}
+
+.modules-left > widget:nth-child(2) {
+    background-color: @pink;
+    background: radial-gradient(8pt 8pt at left, transparent 100%, @pink);
+}
+
+.modules-left > widget:nth-child(3) {
+    background-color: @red;
+    background: radial-gradient(8pt 8pt at left, transparent 100%, @red);
+}
+
+.modules-left > widget:nth-child(4) {
+    background-color: @peach;
+    background: radial-gradient(8pt 8pt at left, transparent 100%, @peach);
+}
+
+.modules-left > widget:nth-child(5) {
+    background-color: @green;
+    background: radial-gradient(8pt 8pt at left, transparent 100%, @green);
+}
+
+.modules-left > widget:nth-child(6) {
+    background-color: @sky;
+    background: radial-gradient(8pt 8pt at left, transparent 100%, @sky);
+}
+
+.modules-left > widget:nth-child(7) {
+    background-color: @blue;
+    background: radial-gradient(8pt 8pt at left, transparent 100%, @blue);
+}

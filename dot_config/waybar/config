@@ -1,115 +1,34 @@
 [
-    // Laptop TOP Waybar
     {
-        // Main configuration
+        // Top configuration
         "name": "top-bar",
         "id": "top-bar",
         "layer": "top",
         "output": "eDP-1",
         "position": "top",
-        //"margin": "5px 5px 5px 5px", // top right bottom left
         "mode": "dock",
         "exclusive": false,
-        // Modules
-        "modules-left": [
-            "memory",
-            "cpu",
-            "disk",
-            "temperature",
-            "network",
-            "battery"
-        ],
-        "memory": {
-            "format": "{}% "
-        },
-        "custom/logo": {
-            "format": "",
-            "tooltip": false
-        },
-        "temperature": {
-            // "thermal-zone": 2,
-            // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-            "critical-threshold": 80,
-            // "format-critical": "{temperatureC}°C {icon}",
-            "format": "{temperatureC}°C {icon}",
-            "format-icons": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "network": {
-            // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "{essid} ({signalStrength}%) ",
-            "format-ethernet": "{ipaddr}/{cidr} ",
-            "tooltip-format": "{ifname} via {gwaddr} ",
-            "format-linked": "{ifname} (No IP) ",
-            "format-disconnected": "Disconnected ⚠",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}"
-        },
-        "cpu": {
-            "interval": "10",
-            "format": "{usage}% ",
-            "tooltip": false
-        },
-        "disk": {
-            "interval": "60",
-            "unit": "GiB",
-            "format": "{percentage_used}%",
-            "path": "/",
-            "tooltip": true,
-            "tooltip-format": "{free} libre"
-        },
-        "battery": {
-            "bat": "BAT0",
-            // "full-at": 80,
-            "design-capacity": true,
-            "states": {
-                "100": 100,
-                "75": 75,
-                "50": 50,
-                "25": 25,
-                // "good": 95,
-                "warning": 30,
-                "critical": 15
-            },
-            "tooltip": true,
-            "format": "{capacity}% {icon}",
-            "format-time": "{H}h {M}m",
-            "format-charging": "{time} ⚡",
-            "format-plugged": "{capacity}% ",
-            "format-alt": "{power} {icon}",
-            "format-tooltip": "{power}",
-            // "format-good": "", // An empty format will hide the module
-            // "format-full": "",
-            "format-icons": [
-                "",
-                "",
-                "",
-                "",
-                ""
-            ]
-        },
-        "modules-center": [
-            "custom/logo"
-        ],
-        // Top-right : media
-        "modules-right": [
-            // "cava", // Cava module not build
-            "mpris"
-        ],
-        "mpris": {
-            "player": "playerctld",
-            // ignored-players: []
-            // "interval": "3",
-            "format": "{player_icon} {artist} - {title}",
-            "player-icons": {
-                "spotify": ""
-            },
-            "tooltip": true,
-            "truncate-hours": true,
-            "tooltip-format": "Artist: {artist}\nAlbum: {album}\n{position}/{length}"
-        }
+        "include": [
+            /* Top left modules */
+            "/home/eros/.config/waybar/modules_left/top.json",
+
+            "/home/eros/.config/waybar/modules/memory/memory.json",
+            "/home/eros/.config/waybar/modules/cpu/cpu.json",
+            "/home/eros/.config/waybar/modules/disk/disk.json",
+            "/home/eros/.config/waybar/modules/temperature/temperature.json",
+            "/home/eros/.config/waybar/modules/network/network.json",
+            "/home/eros/.config/waybar/modules/battery/battery.json",
+
+            /* Top center modules */
+            "/home/eros/.config/waybar/modules_center/top.json",
+
+            "/home/eros/.config/waybar/modules/custom/logo/customLogo.json",
+
+            /* top right modules */
+            "/home/eros/.config/waybar/modules_right/top.json",
+
+            "/home/eros/.config/waybar/modules/mpris/mpris.json"
+        ]
     },
     // Bottom Waybar == Laptop TOP Waybar
     // Laptop BOTTOM Waybar
@@ -144,10 +63,17 @@
             "offscreen-css-text": "toto",
             "show-focused-workspace-name": true,
             "icon": true,
-            "icon-size": 20
+            "icon-size": 15
         },
         "modules-center": [
-            "tray"
+            // "tray"
+            "custom/logo",
+            "custom/logo",
+            "custom/logo",
+            "custom/logo",
+            "custom/logo",
+            "custom/logo",
+            "custom/logo"
             // "gamemode"
         ],
         "tray": {
@@ -158,7 +84,8 @@
         // Bottom right bar : basic
         "modules-right": [
             "bluetooth",
-            "group/son",
+            "pulseaudio#sink",
+            "pulseaudio#source",
             // TODO retirer quand on aura un GTK listener
             "backlight",
             // "clock#week",
@@ -169,13 +96,6 @@
             // "sway/scratchpad",
             // "wlr/taskbar"
         ],
-        "group/son": {
-            "orientation": "horizontal",
-            "modules": [
-                "pulseaudio#sink",
-                "pulseaudio#source"
-            ]
-        },
         "pulseaudio/slider": {
             "min": 0,
             "max": 100,
@@ -337,6 +257,10 @@
             "escape": true,
             "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
             // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        },
+        "custom/logo": {
+            "format": "",
+            "tooltip": false
         },
         "bluetooth": {
             "tooltip-format-enumerate-connected": "",

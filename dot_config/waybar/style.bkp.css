@@ -11,7 +11,7 @@
 * Accéder à un GtkEvent : widget
 * Accéder à un label : label
 * Typical cascade: Window > Box.horizontal > Box.modules-* > widget > label
-* Typical cascade: Window > Box.vertical > Box.modules-* > widget > box > button
+* Typical cascade: Window > Box.vertical > Box.modules-* > widget > box > button > label
 *******************************************************************************/
 
 /*******************************************************************************

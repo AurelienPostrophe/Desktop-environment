@@ -1,0 +1,10 @@
+{
+    "disk": {
+        "interval": "60",
+        "unit": "GiB",
+        "format": "{percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "{free} libre"
+    }
+}
