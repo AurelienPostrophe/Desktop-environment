@@ -1,0 +1,21 @@
+{
+    "bluetooth": {
+        "tooltip-format-enumerate-connected": "",
+        "format-on": "",
+        "tooltip-format-on": "",
+        "format-connected": " {device_alias} {device_battery_percentage} ⚡",
+        "tooltip-format-connected": "",
+        "format-disabled": "",
+        "tooltip-format-disabled": "",
+        "format-off": "",
+        "tooltip-format-off": "",
+        "format": " {status}",
+        "tooltip-format": "{device_enumerate}",
+        // left click -> show pairable device
+        "on-click": "",
+        // right click -> kill controller
+        "on-right-click": "",
+        // device battery
+        "format-connected-battery": "{device_battery_percentage} ⚡"
+    }
+}

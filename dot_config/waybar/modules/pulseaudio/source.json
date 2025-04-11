@@ -1,0 +1,11 @@
+{
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "scroll-step": 0.0,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click-middle": "",
+        "on-click-right": ""
+    }
+}

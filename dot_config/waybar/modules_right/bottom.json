@@ -1,0 +1,15 @@
+{
+    "modules-right": [
+        "bluetooth",
+        "pulseaudio#sink",
+        "pulseaudio#source",
+        // TODO retirer quand on aura un GTK listener
+        "backlight",
+        "clock#date",
+        "clock#time"
+        // "MON/SCRIPT",
+        // "image",
+        // "sway/scratchpad",
+        // "wlr/taskbar"
+    ],
+}

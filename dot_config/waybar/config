@@ -1,6 +1,6 @@
 [
     {
-        // Top configuration
+        /* Top configuration */
         "name": "top-bar",
         "id": "top-bar",
         "layer": "top",
@@ -22,269 +22,43 @@
             /* Top center modules */
             "/home/eros/.config/waybar/modules_center/top.json",
 
-            "/home/eros/.config/waybar/modules/custom/logo/customLogo.json",
+            "/home/eros/.config/waybar/modules/custom/logo.json",
 
-            /* top right modules */
+            /* Top right modules */
             "/home/eros/.config/waybar/modules_right/top.json",
 
             "/home/eros/.config/waybar/modules/mpris/mpris.json"
         ]
     },
-    // Bottom Waybar == Laptop TOP Waybar
-    // Laptop BOTTOM Waybar
     {
-        // Main configuration
+        /* Bottom configuration */
         "name": "bottom-bar",
         "id": "bottom-bar",
         "layer": "top",
         "position": "bottom",
-        //"margin": "5px 5px 5px 5px", // top right bottom left
         "mode": "dock",
-        // Left
-        "modules-left": [
-            "sway/workspaces",
-            "sway/window",
-            "sway/mode"
-        ],
-        "sway/workspaces": {
-            "all-outputs": true,
-            "disable-scroll": true,
-            "disable-click": true,
-            "disable-markup": true,
-            "format": "{value}"
-        },
-        "sway/window": {
-            "format": "{app_id}",
-            "max-length": 50,
-            "on-click": "",
-            "tooltip": false,
-            "all-outputs": true,
-            "offscreen-css": true,
-            "offscreen-css-text": "toto",
-            "show-focused-workspace-name": true,
-            "icon": true,
-            "icon-size": 15
-        },
-        "modules-center": [
-            // "tray"
-            "custom/logo",
-            "custom/logo",
-            "custom/logo",
-            "custom/logo",
-            "custom/logo",
-            "custom/logo",
-            "custom/logo"
-            // "gamemode"
-        ],
-        "tray": {
-            "icon-size": 20,
-            "show-passive-items": true,
-            "spacing": 10
-        },
-        // Bottom right bar : basic
-        "modules-right": [
-            "bluetooth",
-            "pulseaudio#sink",
-            "pulseaudio#source",
-            // TODO retirer quand on aura un GTK listener
-            "backlight",
-            // "clock#week",
-            "clock#date",
-            "clock#time"
-            // "MON/SCRIPT",
-            // "image",
-            // "sway/scratchpad",
-            // "wlr/taskbar"
-        ],
-        "pulseaudio/slider": {
-            "min": 0,
-            "max": 100,
-            "orientation": "horizontal"
-        },
-        "pulseaudio#sink": {
-            "format": "{icon}",
-            "format-muted": "",
-            "format-bluetooth": "{icon}",
-            "format-icons": {
-                "speaker": [
-                    " ",
-                    " ",
-                    " "
-                ],
-                "headphone": [
-                    " ",
-                    " ",
-                    " "
-                ],
-                "default": [
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            // Disable mouse actions
-            "scroll-step": 0.0,
-            "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-            "on-click-middle": "",
-            "on-click-right": ""
-        },
-        "pulseaudio#source": {
-            "format": "{format_source}",
-            "format-source": "",
-            "format-source-muted": "",
-            "scroll-step": 0.0,
-            "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-            "on-click-middle": "",
-            "on-click-right": ""
-        },
-        "backlight": {
-            // "device": "acpi_video1",
-            "format": "{percent}% {icon}",
-            "format-icons": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-            ]
-        },
-        // "backlight/slider": {
-        // },
-        "clock#week": {
-            "interval": 500000,
-            // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
-            "format": "{:Week %W}",
-            "timezone": "Europe/Paris",
-            "locale": "fr_FR.utf8",
-            "on-click": "",
-            "on-scroll-up": "",
-            "on-scroll-down": "",
-            "tooltip": false
-        },
-        "clock#date": {
-            "interval": 38200,
-            // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
-            "format": "{:%A %d %B}",
-            "timezone": "Europe/Paris",
-            "locale": "fr_FR.utf8",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-            "on-click": "",
-            "on-scroll-up": "",
-            "on-scroll-down": "",
-            "tooltip": true,
-            "calendar": {
-                "mode": "month",
-                "weeks-pos": "left",
-                // "format": {
-                //     "months": "<span color='#ffead3'><b>{}</b></span>",
-                //     "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                //     "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                //     "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                //     "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-                // }
-            }
-        },
-        "clock#time": {
-            "interval": 5,
-            // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
-            "format": "{:%H:%M:%S}",
-            "timezone": "Europe/Paris",
-            "locale": "fr_FR.utf8",
-            "on-click": "",
-            "on-scroll-up": "",
-            "on-scroll-down": "",
-            "tooltip": false
-        },
-        //
-        // Modules configuration
-        // "sway/workspaces": {
-        //     "disable-scroll": true,
-        //     "all-outputs": true,
-        //     "warp-on-scroll": false,
-        //     "format": "{name}: {icon}",
-        //     "format-icons": {
-        //         "1": "",
-        //         "2": "",
-        //         "3": "",
-        //         "4": "",
-        //         "5": "",
-        //         "urgent": "",
-        //         "focused": "",
-        //         "default": ""
-        //     }
-        // },
-        "keyboard-state": {
-            "numlock": true,
-            "capslock": true,
-            "format": "{name} {icon}",
-            "format-icons": {
-                "locked": "",
-                "unlocked": ""
-            }
-        },
-        "sway/mode": {
-            "format": "<span style=\"italic\">{}</span>"
-        },
-        "sway/scratchpad": {
-            "format": "{icon} {count}",
-            "show-empty": false,
-            "format-icons": [
-                "",
-                ""
-            ],
-            "tooltip": true,
-            "tooltip-format": "{app}: {title}"
-        },
-        "idle_inhibitor": {
-            "format": "{icon}",
-            "format-icons": {
-                "activated": "",
-                "deactivated": ""
-            }
-        },
-        "custom/media": {
-            "format": "{icon} {}",
-            "return-type": "json",
-            "max-length": 40,
-            "format-icons": {
-                "spotify": "",
-                "default": "🎜"
-            },
-            "escape": true,
-            "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-            // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-        },
-        "custom/logo": {
-            "format": "",
-            "tooltip": false
-        },
-        "bluetooth": {
-            "tooltip-format-enumerate-connected": "",
-            // Controller powered on
-            "format-on": "",
-            "tooltip-format-on": "",
-            // Controller connected to at least 1 device
-            "format-connected": " {device_alias} {device_battery_percentage} ⚡",
-            "tooltip-format-connected": "",
-            // Controller disabled
-            "format-disabled": "",
-            "tooltip-format-disabled": "",
-            // Controller off
-            "format-off": "",
-            "tooltip-format-off": "",
-            // fallback format
-            "format": " {status}",
-            "tooltip-format": "{device_enumerate}",
-            // left click -> show pairable device
-            "on-click": "",
-            // right click -> kill controller
-            "on-right-click": "",
-            // device battery
-            "format-connected-battery": "{device_battery_percentage} ⚡"
-        }
+        "include": [
+            /* Bottom left modules */
+            "/home/eros/.config/waybar/modules_left/bottom.json",
+
+            "/home/eros/.config/waybar/modules/sway/workspaces.json",
+            "/home/eros/.config/waybar/modules/sway/window.json",
+            "/home/eros/.config/waybar/modules/sway/mode.json",
+
+            /* Bottom center modules */
+            "/home/eros/.config/waybar/modules_center/bottom.json",
+
+            "/home/eros/.config/waybar/modules/tray/tray.json",
+
+            /* Bottom right modules */
+            "/home/eros/.config/waybar/modules_right/bottom.json",
+
+            "/home/eros/.config/waybar/modules/bluetooth/bluetooth.json",
+            "/home/eros/.config/waybar/modules/pulseaudio/sink.json",
+            "/home/eros/.config/waybar/modules/pulseaudio/source.json",
+            "/home/eros/.config/waybar/modules/backlight/backlight.json",
+            "/home/eros/.config/waybar/modules/clock/date.json",
+            "/home/eros/.config/waybar/modules/clock/time.json"
+        ]
     }
 ]

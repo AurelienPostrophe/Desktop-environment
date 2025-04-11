@@ -1,0 +1,25 @@
+{
+    "clock#date": {
+        "interval": 38200,
+        // "format": "{%A %e %B %Y  :%Y-%m-%W-%d %H:%M | %A}",
+        "format": "{:%A %d %B}",
+        "timezone": "Europe/Paris",
+        "locale": "fr_FR.utf8",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "",
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        "tooltip": true,
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "left"
+            // "format": {
+            //     "months": "<span color='#ffead3'><b>{}</b></span>",
+            //     "days": "<span color='#ecc6d9'><b>{}</b></span>",
+            //     "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+            //     "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+            //     "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            // }
+        }
+    }
+}

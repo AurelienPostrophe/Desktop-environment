@@ -1,0 +1,14 @@
+{
+    "sway/window": {
+        "format": "{app_id}",
+        "max-length": 50,
+        "on-click": "",
+        "tooltip": false,
+        "all-outputs": true,
+        "offscreen-css": true,
+        "offscreen-css-text": "toto",
+        "show-focused-workspace-name": true,
+        "icon": true,
+        "icon-size": 15
+    }
+}

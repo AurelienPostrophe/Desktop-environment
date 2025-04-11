@@ -1,0 +1,28 @@
+{
+    "pulseaudio#sink": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-bluetooth": "{icon}",
+        "format-icons": {
+            "speaker": [
+                " ",
+                " ",
+                " "
+            ],
+            "headphone": [
+                " ",
+                " ",
+                " "
+            ],
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 0.0,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "",
+        "on-click-right": ""
+    }
+}
