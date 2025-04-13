@@ -7,29 +7,27 @@
 #########################################################################
 
 ####################################################################################################
-# Variablesa
+# Variables
 ####################################################################################################
 
-# Screen: swaymsg -t get_outputs
-
-# Keyboard: swaymsg -t get_inputs
-set $tuxedoKeyboard "0:0:TUXEDO_Keyboard"
-
-## Modifier key. Mod1 for alt
+# Modifier key. Mod1 for alt
 set $mod Mod4
+
+# Keyboard
+set $tuxedoKeyboard "0:0:TUXEDO_Keyboard"
 
 # Touchpad
 set $tuxedoTouchpad "2362:597:UNIW0001:00_093A:0255_Touchpad"
 
-# Display
-set $laptopDisplay "China Star Optoelectronics Technology Co., Ltd MNE007ZA3-2 Unknown"
+# Displays
+## tuxedo
+set $tuxedoDisplay "China Star Optoelectronics Technology Co., Ltd MNE007ZA3-2 Unknown"
+## Iiyama
 set $iiyamaDisplay "Iiyama North America PLE2407HDS "
 
 # Software
-
 ## Terminal
 set $term foot
-
 ## App launcher
 ### Note:   pass the final command to swaymsg so that the resulting window can be opened
 ###         on the original workspace that the command was run on.
@@ -54,7 +52,7 @@ input $tuxedoTouchpad {
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 ## Laptop
-output $laptopDisplay {
+output $tuxedoDisplay {
 	mode 2880x1800@120Hz
     pos 0 1080
 }

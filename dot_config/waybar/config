@@ -58,7 +58,7 @@
             "/home/eros/.config/waybar/modules/pulseaudio/source.json",
             "/home/eros/.config/waybar/modules/backlight/backlight.json",
             "/home/eros/.config/waybar/modules/clock/date.json",
-            "/home/eros/.config/waybar/modules/clock/time.json"
+            "/home/eros/.config/waybar/modules/clock/time.json",
         ]
     }
 ]
