@@ -1,0 +1,28 @@
+###############################################################################
+# Tuxedo hardware
+###############################################################################
+
+set $tuxedoDisplay "China Star Optoelectronics Technology Co., Ltd MNE007ZA3-2 Unknown"
+
+output $tuxedoDisplay {
+	mode 2880x1800@120Hz
+    pos 0 1080
+}
+
+###############################################################################
+# Iiyama hardware
+###############################################################################
+
+set $iiyamaDisplay "Iiyama North America PLE2407HDS "
+
+output $iiyamaDisplay {
+    mode 1920x1080@60Hz
+    pos 0 0
+    bg /usr/share/backgrounds/tuxedo-wallpaper-2204-03.jpg fill
+}
+
+###############################################################################
+# Every display
+###############################################################################
+
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill

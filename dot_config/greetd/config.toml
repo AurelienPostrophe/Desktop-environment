@@ -1,0 +1,28 @@
+###############################################################################
+# GreetD configuration
+###############################################################################
+
+# TTY section
+[terminal]
+
+# Starts greeter on next available vt
+vt             =   7
+
+# Switch to VT when launching greetd
+switch          =   false
+
+# Common section
+[general]
+
+# Source /etc/profile and ${HOME}/.profile
+source_profile  =   true
+
+# Greetd file location during first run.
+# Location should be cleared during a reboot
+# runfile
+
+# Greeter section
+[default_session]
+
+command = "wlgreet -e sway"
+user    = eros

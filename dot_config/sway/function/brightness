@@ -1,0 +1,11 @@
+###############################################################################
+# Display brightness
+###############################################################################
+
+# Reduce
+bindsym --locked XF86MonBrightnessDown \
+    exec brightnessctl set 5%-
+
+# Increase
+bindsym --locked XF86MonBrightnessUp \
+    exec brightnessctl set 5%+
