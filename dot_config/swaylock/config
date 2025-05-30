@@ -1,0 +1,116 @@
+###############################################################################
+# SWAYLOCK CONFIGURATION
+###############################################################################
+
+# Color are from catpucchin "frappe"
+
+#################
+### Functions ###
+#################
+
+## Debug mode
+debug
+
+## Do not validate empty password
+ignore-empty-password
+
+## detach mode
+# daemonize
+
+
+##################
+### Background ###
+##################
+
+## Show image [[<output>]:]<path>
+# image *:~/desktop/Pictures/swaylock/main.jpg
+
+## Image scaling: stretch | fill | fit | center | tile | solid_color
+# scaling <mode>
+
+## tiling (same as --scaling=tile)
+# tiling
+
+
+#################
+### Indicator ###
+#################
+
+## Show number of failed attempts in login screen
+show-failed-attempts
+
+## Show current keyboard layout
+show-keyboard-layout
+
+## Hide current keyboard layout
+# hide-keyboard-layout
+
+## Disable the caps lock warning
+# disable-caps-lock-text
+
+## Show the caps lock warning also on the indicator
+indicator-caps-lock
+
+## Disable indicator
+# no-unlock-indicator
+
+## indicator always visible
+# indicator-idle-visible
+
+## indicator size
+indicator-radius=100
+indicator-thickness=10
+
+## Indicator position
+# indicator-x-position=
+# indicator-y-position=
+
+## Text font
+font=JetBrains Mono
+font-size=24
+
+##############
+### Colors ###
+##############
+
+color=303446
+
+## Indicator
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+
+## Segments
+bs-hl-color=f2d5cf
+caps-lock-bs-hl-color=f2d5cf
+key-hl-color=a6d189
+caps-lock-key-hl-color=a6d189
+separator-color=00000000
+
+## Layout text
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=c6d0f5
+
+## Line ring
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+## Ring
+ring-color=babbf1
+ring-clear-color=f2d5cf
+ring-caps-lock-color=ef9f76
+ring-ver-color=8caaee
+ring-wrong-color=ea999c
+
+## Text
+text-color=c6d0f5
+text-clear-color=f2d5cf
+text-caps-lock-color=ef9f76
+text-ver-color=8caaee
+text-wrong-color=ea999c
